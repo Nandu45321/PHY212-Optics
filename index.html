@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optics Formula Sheet</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px;
+            background: #2c3e50;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .date {
+            font-style: italic;
+            color: #ecf0f1;
+        }
+        
+        .content {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .subsection {
+            margin-bottom: 25px;
+        }
+        
+        .subsection-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .formula {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+            overflow-x: auto;
+        }
+        
+        .explanation {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+        
+        .convention {
+            background: #e8f4fc;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            grid-column: 1 / -1;
+        }
+        
+        .convention h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .convention-list {
+            list-style-type: none;
+            columns: 2;
+        }
+        
+        .convention-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            break-inside: avoid;
+        }
+        
+        .convention-list li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 10px;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: #ecf0f1;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            
+            .convention-list {
+                columns: 1;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Optics Formula Sheet</h1>
+            <p class="date">September 21, 2025</p>
+        </header>
+        
+        <div class="content">
+            <div class="convention">
+                <h2>Cartesian Sign Convention</h2>
+                <ul class="convention-list">
+                    <li>Light travels from left to right</li>
+                    <li>Object distance (u) is always negative</li>
+                    <li>Focal length (f) is positive for convex lenses and negative for concave lenses</li>
+                    <li>Image distance (v) is positive for real images and negative for virtual images</li>
+                    <li>Height above principal axis is positive, below is negative</li>
+                    <li>Radius of curvature (R) is positive if center is to the right of the vertex</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Geometrical Optics</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Spherical Refracting Surface</div>
+                    <div class="formula">\[ \frac{n_2}{v} - \frac{n_1}{u} = \frac{n_2 - n_1}{R} \]</div>
+                    <div class="explanation">
+                        Relates object and image distances for refraction at a single spherical surface. Uses the Cartesian sign convention.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Lens Maker's Formula</div>
+                    <div class="formula">\[ \frac{1}{f} = (n_{\text{lens}} - n_{\text{med}}) \left( \frac{1}{R_1} - \frac{1}{R_2} \right) \]</div>
+                    <div class="formula">\[ \frac{1}{f} = \frac{1}{v} - \frac{1}{u} \]</div>
+                    <div class="explanation">
+                        Calculates focal length of a lens based on its geometry and refractive index. The thin lens formula relates object and image distances to focal length.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Magnification</div>
+                    <div class="formula">\[ m = \frac{h_i}{h_o} = \frac{v}{u} \]</div>
+                    <div class="explanation">
+                        Ratio of image height to object height, also equal to ratio of image distance to object distance.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Newton's Lens Equation</div>
+                    <div class="formula">\[ x_o \cdot x_i = f^2 \]</div>
+                    <div class="explanation">
+                        Relates distances from object to front focal point and image to rear focal point.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Wave Optics</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Wave Equation & Solutions</div>
+                    <div class="formula">\[ \frac{\partial^2 \psi}{\partial x^2} = \frac{1}{v^2} \frac{\partial^2 \psi}{\partial t^2} \]</div>
+                    <div class="formula">
+                        \[ \psi = A \sin(k(x \mp vt)) \]
+                        \[ \psi = A \sin(2\pi (kx \mp \nu t)) \]
+                        \[ \psi = A \sin(kx \mp \omega t) \]
+                    </div>
+                    <div class="explanation">
+                        The wave equation describes how waves propagate. Common solutions include harmonic waves with different parameterizations.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Phase & Group Velocity</div>
+                    <div class="formula">\[ v_p = \frac{\omega}{k} \]</div>
+                    <div class="formula">\[ v_g = \frac{d\omega}{dk} = \frac{\omega_1 - \omega_2}{k_1 - k_2} \]</div>
+                    <div class="explanation">
+                        Phase velocity is the speed of wave phase, group velocity is the speed of wave envelope or modulation.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Dispersive Medium</div>
+                    <div class="formula">\[ k(\omega) = \frac{\omega}{c} n(\omega) \]</div>
+                    <div class="formula">\[ v_g = \frac{c}{n(\omega) + \omega \frac{dn}{d\omega}} \]</div>
+                    <div class="explanation">
+                        In dispersive media, the wave number depends on frequency. The group velocity formula accounts for this dispersion.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Polarization</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Jones Vectors</div>
+                    <div class="formula">
+                        Linear polarization along x: \( \begin{bmatrix} 1 \\ 0 \end{bmatrix} \) \\
+                        Linear polarization along y: \( \begin{bmatrix} 0 \\ 1 \end{bmatrix} \) \\
+                        Linear at 45°: \( \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 1 \end{bmatrix} \) \\
+                        Right circular: \( \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ -i \end{bmatrix} \) \\
+                        Left circular: \( \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ i \end{bmatrix} \)
+                    </div>
+                    <div class="explanation">
+                        Jones vectors represent different polarization states of light.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Jones Matrices</div>
+                    <div class="formula">
+                        Linear polarizer (x): \( \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} \) \\
+                        Quarter-wave plate: \( \begin{bmatrix} 1 & 0 \\ 0 & i \end{bmatrix} \) \\
+                        Linear polarizer at 45°: \( \frac{1}{2} \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix} \)
+                    </div>
+                    <div class="explanation">
+                        Jones matrices represent optical elements that modify polarization.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Malus's Law</div>
+                    <div class="formula">\[ I = I_0 \cos^2\theta \]</div>
+                    <div class="explanation">
+                        Intensity of polarized light after passing through a polarizer at angle θ.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Waveplates</div>
+                    <div class="formula">\[ \Delta \phi = \frac{2\pi}{\lambda} d |n_e - n_o| \]</div>
+                    <div class="explanation">
+                        Phase retardation of a waveplate depends on thickness and birefringence.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Maxwell's Equations & EM Waves</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-title">In Matter (ρ=0, J=0)</div>
+                    <div class="formula">
+                        \[ \nabla \cdot \vec{D} = 0 \]
+                        \[ \nabla \cdot \vec{B} = 0 \]
+                        \[ \nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t} \]
+                        \[ \nabla \times \vec{H} = \frac{\partial \vec{D}}{\partial t} \]
+                    </div>
+                    <div class="explanation">
+                        Maxwell's equations in linear, isotropic, homogeneous media with no free charges or currents.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Wave Solutions</div>
+                    <div class="formula">
+                        \[ \vec{E} = \vec{E_0} e^{i(\vec{k} \cdot \vec{r} - \omega t)} \]
+                        \[ \vec{B} = \vec{B_0} e^{i(\vec{k} \cdot \vec{r} - \omega t)} \]
+                        \[ k = \frac{\omega}{v} = \frac{n\omega}{c} \]
+                        \[ n = \sqrt{\frac{\epsilon \mu}{\epsilon_0 \mu_0}} \]
+                    </div>
+                    <div class="explanation">
+                        Plane wave solutions to Maxwell's equations. The refractive index depends on material properties.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Poynting Vector</div>
+                    <div class="formula">\[ \vec{S} = \vec{E} \times \vec{H} \]</div>
+                    <div class="explanation">
+                        Represents the directional energy flux (power per unit area) of an electromagnetic field.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Reflection & Refraction</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Snell's Law</div>
+                    <div class="formula">\[ n_1 \sin\theta_i = n_2 \sin\theta_t \]</div>
+                    <div class="explanation">
+                        Relates angles of incidence and refraction to the refractive indices of the two media.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Fresnel's Equations</div>
+                    <div class="formula">
+                        Parallel polarization (p): \\
+                        \[ r_p = \frac{n_2 \cos\theta_i - n_1 \cos\theta_t}{n_2 \cos\theta_i + n_1 \cos\theta_t} \]
+                        \[ t_p = \frac{2 n_1 \cos\theta_i}{n_2 \cos\theta_i + n_1 \cos\theta_t} \]
+                    </div>
+                    <div class="formula">
+                        Perpendicular polarization (s): \\
+                        \[ r_s = \frac{n_1 \cos\theta_i - n_2 \cos\theta_t}{n_1 \cos\theta_i + n_2 \cos\theta_t} \]
+                        \[ t_s = \frac{2 n_1 \cos\theta_i}{n_1 \cos\theta_i + n_2 \cos\theta_t} \]
+                    </div>
+                    <div class="explanation">
+                        Fresnel equations give the reflection and transmission coefficients for light at an interface.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Reflectance & Transmittance</div>
+                    <div class="formula">
+                        \[ R = |r|^2 \]
+                        \[ T = \frac{n_2 \cos\theta_t}{n_1 \cos\theta_i} |t|^2 \]
+                    </div>
+                    <div class="explanation">
+                        The fraction of incident power that is reflected and transmitted.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Special Angles</div>
+                    <div class="formula">
+                        Brewster's angle: \[ \theta_B = \tan^{-1}\left(\frac{n_2}{n_1}\right) \]
+                        Critical angle: \[ \theta_c = \sin^{-1}\left(\frac{n_2}{n_1}\right) \]
+                    </div>
+                    <div class="explanation">
+                        At Brewster's angle, reflected light is perfectly polarized. Beyond the critical angle, total internal reflection occurs.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Evanescent Wave</div>
+                    <div class="formula">\[ \alpha = \frac{2\pi}{\lambda} n_2 \sqrt{\sin^2\theta_i - \sin^2\theta_c} \]</div>
+                    <div class="explanation">
+                        Decay constant for the evanescent wave during total internal reflection.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Waveguides</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-title">V-Number</div>
+                    <div class="formula">\[ V = \frac{2\pi a}{\lambda} \sqrt{n_1^2 - n_2^2} \]</div>
+                    <div class="explanation">
+                        Determines the number of modes in a waveguide. Single-mode operation when V < 2.405.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Propagation Constant</div>
+                    <div class="formula">\[ b = \frac{\beta^2 - k_0^2 n_2^2}{k_0^2 (n_1^2 - n_2^2)} \]</div>
+                    <div class="explanation">
+                        Normalized propagation constant. A mode is guided if 0 < b < 1. Cut-off occurs at b = 0.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Physics 212 Formula Sheet | Using Cartesian Sign Convention</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add subtle animation to formulas when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const formulas = document.querySelectorAll('.formula');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            formulas.forEach(formula => {
+                formula.style.opacity = 0;
+                formula.style.transform = 'translateY(20px)';
+                formula.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(formula);
+            });
+        });
+    </script>
+</body>
+</html>
